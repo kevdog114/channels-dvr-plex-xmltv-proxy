@@ -16,7 +16,6 @@ DVR generates its XMLTV file and Plex expects. Namely, it fixes the issue of
 Plex seeing nearly all episodes as "New" when they are not new episodes.
 
 ## Sample data
-
 Channels DVR endpoints:
 ```
   http://ip:8089/devices/ANY/channels.m3u
@@ -24,3 +23,13 @@ Channels DVR endpoints:
   http://ip:8089/devices/ANY/guide/xmltv
   http://ip:8089/devices/ANY/guide/xmltv?duration=86000
 ```
+
+## Using
+This can be run as a docker image:
+```
+  docker run -d -p 8080:80 \
+    -e "XMLTV_SOURCE=http://ip:8089/devices/ANY/guide/xmltv?duration=1209600" \
+    -e "M3U_SOURCE=http://ip:8089/devices/ANY/channels.m3u" \
+    channels-dvr-plex-xmltv-proxy
+```
+
