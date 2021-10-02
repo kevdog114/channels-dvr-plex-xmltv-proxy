@@ -33,3 +33,8 @@ This can be run as a docker image:
     channels-dvr-plex-xmltv-proxy
 ```
 
+You can then use these endpoints for your XMLTV and M3U, to be imported into Plex and xTeve:
+```
+  http://ip-of-this-docker:8080/api/m3u
+  http://ip-of-this-docker:8080/api/xmltv
+```
