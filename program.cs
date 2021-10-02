@@ -21,8 +21,6 @@ app.MapGet("/api/xmltv", async () => {
 
 	var client = new HttpClient();
 
-	int days = 7;
-	int seconds = days * 24 * 60 * 60;
 	using (var ms = await client.GetStreamAsync(ENV_XMLTV_SOURCE))
 	{
 		var x = XElement.Load(ms);
